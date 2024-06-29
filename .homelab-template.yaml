@@ -2,13 +2,7 @@ _commit: v1.8.2
 _src_path: /home/crthomas/code/charlesthomas/homelab-template
 additionalResources: ''
 backups: false
-helm: true
-helmCrds: false
-helmName: mosquitto
-helmRelease: mosquitto
-helmRepo: https://charts.truecharts.org/
-helmValues: helm/values.yaml
-helmVersion: 11.0.17
+helm: false
 homepageEnabled: false
 ingress: false
 labels: ''
@@ -16,7 +10,10 @@ name: mosquitto
 namespace: mosquitto
 pvc: false
 reloader: false
-resources: []
+resources:
+- configmaps.yaml
+- deployments.yaml
+- services.yaml
 service: false
 serviceAccount: false
 upstreamURL: https://mosquitto.org

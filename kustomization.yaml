@@ -7,11 +7,7 @@ commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-mosquitto
 
 resources:
+- resources/configmaps.yaml
+- resources/deployments.yaml
 - resources/namespaces.yaml
-helmCharts:
-- name: mosquitto
-  namespace: mosquitto
-  releaseName: mosquitto
-  repo: https://charts.truecharts.org/
-  valuesFile: helm/values.yaml
-  version: 11.0.17
+- resources/services.yaml
