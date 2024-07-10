@@ -128,27 +128,6 @@ spec:
       serviceAccountName: default
       shareProcessNamespace: false
       terminationGracePeriodSeconds: 60
-      topologySpreadConstraints:
-      - labelSelector:
-          matchLabels:
-            app.kubernetes.io/instance: mosquitto
-            app.kubernetes.io/name: mosquitto
-            pod.name: mosquitto
-        maxSkew: 1
-        nodeAffinityPolicy: Honor
-        nodeTaintsPolicy: Honor
-        topologyKey: truecharts.org/rack
-        whenUnsatisfiable: ScheduleAnyway
-      - labelSelector:
-          matchLabels:
-            app.kubernetes.io/instance: mosquitto
-            app.kubernetes.io/name: mosquitto
-            pod.name: mosquitto
-        maxSkew: 1
-        nodeAffinityPolicy: Honor
-        nodeTaintsPolicy: Honor
-        topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: ScheduleAnyway
       volumes:
       - emptyDir:
           medium: Memory
