@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mosquitto
+  namespace: mosquitto
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: mqtt.crt.house
+spec:
+  ingressClassName: nginx-internal
+  rules:
+    - host: "mqtt.crt.house"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: mosquitto
+                port:
+                  number: 1883
+  tls:
+    - hosts:
+      - mqtt.crt.house
