@@ -14,17 +14,7 @@ resources:
 - configmaps.yaml
 - deployments.yaml
 - services.yaml
-service: true
+service: false
 serviceAccount: false
-svcName: mosquitto
-svcPortName: mosquitto
-svcPortNum: 1883
-svcProtocol: TCP
-svcSelector: |-
-  app.kubernetes.io/instance: mosquitto
-  app.kubernetes.io/name: mosquitto
-  pod.name: main
-svcTargetPort: mosquitto
-svcType: LoadBalancer
 upstreamURL: https://mosquitto.org
 url: https://github.com/charlesthomas/homelab-mosquitto
