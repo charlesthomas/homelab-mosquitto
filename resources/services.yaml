@@ -9,7 +9,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: mqtt.crt.house
 spec:
   type: LoadBalancer
-  svcType: LoadBalancer
+  externalTrafficPolicy: Local
   ports:
   - port: 1883
     targetPort: mosquitto
