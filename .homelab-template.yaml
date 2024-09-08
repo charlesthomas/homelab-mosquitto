@@ -4,14 +4,7 @@ additionalResources: ''
 backups: false
 helm: false
 homepageEnabled: false
-ingClass: nginx-internal
-ingCname: ''
-ingExtraAnnotations: ''
-ingHost: mqtt.crt.house
-ingName: mosquitto
-ingPathType: Prefix
-ingWebSockets: false
-ingress: true
+ingress: false
 labels: ''
 name: mosquitto
 namespace: mosquitto
@@ -20,11 +13,18 @@ reloader: true
 resources:
 - configmaps.yaml
 - deployments.yaml
-- ingresses.yaml
 - services.yaml
-service: false
+service: true
 serviceAccount: false
 svcName: mosquitto
+svcPortName: mosquitto
 svcPortNum: 1883
+svcProtocol: TCP
+svcSelector: |-
+  app.kubernetes.io/instance: mosquitto
+  app.kubernetes.io/name: mosquitto
+  pod.name: main
+svcTargetPort: mosquitto
+svcType: LoadBalancer
 upstreamURL: https://mosquitto.org
 url: https://github.com/charlesthomas/homelab-mosquitto
