@@ -15,6 +15,7 @@ spec:
     targetPort: mosquitto
     protocol: TCP
     name: mosquitto
+    nodePort: 30088
   selector:
     app.kubernetes.io/instance: mosquitto
     app.kubernetes.io/name: mosquitto
