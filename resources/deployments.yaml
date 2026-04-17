@@ -43,7 +43,7 @@ spec:
           value: "0022"
         - name: S6_READ_ONLY_ROOT
           value: "1"
-        image: eclipse-mosquitto:2.0.22@sha256:6852da90a65dfff7aa3a1c8b249e92bb83c17ea8bbcce56bedff8707332a1a29
+        image: eclipse-mosquitto:2.0.22@sha256:914f529386804c8278a4e581526b9be5e1604df44b30daabc70aa97dcefe5268
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 5
