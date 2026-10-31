@@ -22,3 +22,11 @@ patches:
         reloader.stakater.com/auto: "true"
   target:
     kind: Deployment
+configMapGenerator:
+- name: grafana-dashboard-mosquitto
+  files:
+  - grafana/mosquitto.json
+  options:
+    disableNameSuffixHash: true
+    labels:
+      grafana_dashboard: "1"
